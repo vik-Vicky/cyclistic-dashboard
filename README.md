@@ -7,6 +7,8 @@ An interactive web application built with **Python**, **Dash**, and **Plotly** t
 ## 📊 Project Overview
 This project processes over **423,000 cleaned records** to identify key differences in how different user types utilize the bike-share service. The goal is to provide data-driven recommendations for marketing strategies aimed at converting casual riders into annual members.
 
+**⚠️ Technical Note on Data Selection:** > To ensure maximum performance and comply with the 25MB file size limit on the free hosting tier, this dashboard focuses on **2020 data**. This allowed for a higher resolution of trends and more detailed station mapping within the platform's constraints.
+
 ## ✨ Key Features
 * **Real-time Filtering**: Filter data by Year, User Type, Day of the Week, and specific Station names.
 * **Outlier Management**: Automatically filters out trips longer than **120 minutes** to ensure data quality and realistic averages.
