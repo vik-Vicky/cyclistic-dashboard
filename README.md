@@ -31,25 +31,13 @@ Before visualization, the following **time-based features** were extracted from 
 * `hour`: Extracted to identify peak traffic periods.
 * `ride_length`: Calculated as the total duration in minutes (`ended_at` - `started_at`).
 
-## 🚀 How to Run Locally
-1.  **Clone the repository**:
-    ```bash
-    git clone [https://github.com/YOUR_USER/cyclistic-dashboard.git](https://github.com/YOUR_USER/cyclistic-dashboard.git)
-    ```
-2.  **Install dependencies**:
-    ```bash
-    pip install dash plotly pandas
-    ```
-3.  **Prepare the data**: Ensure the `all_trips_clean.csv` file is in the root directory.
-4.  **Launch the dashboard**:
-    ```bash
-    python app.py
-    ```
-5.  Open your browser and navigate to `http://127.0.0.1:8050/`.
-
 ## 📸 Dashboard Preview
 
 ![Dashboard Screenshot](dashboard_final.png)
+
+# Cyclistic Bike-Share Analysis Dashboard 🚲
+
+**Live Demo:** [View the interactive dashboard here](https://cyclistic-dashboard.onrender.com)
 
 ---
 *Developed as part of the Google Data Analytics Capstone Project.*
