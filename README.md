@@ -46,7 +46,7 @@ Before visualization, the following **time-based features** were extracted from 
 5.  Open your browser and navigate to `http://127.0.0.1:8050/`.
 
 ## 📸 Dashboard Preview
-*(Insert your screenshot here)*
+
 ![Dashboard Screenshot](dashboard_final.png)
 
 ---
