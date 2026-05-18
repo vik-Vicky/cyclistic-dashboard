@@ -35,7 +35,7 @@ Before visualization, the following **time-based features** were extracted from 
 
 ![Dashboard Screenshot](dashboard_final.png)
 
-# Cyclistic Bike-Share Analysis Dashboard 🚲
+## Cyclistic Bike-Share Analysis Dashboard 🚲
 
 **Live Demo:** [View the interactive dashboard here](https://cyclistic-dashboard.onrender.com)
 
