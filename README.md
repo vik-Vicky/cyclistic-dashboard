@@ -11,7 +11,7 @@ Interactive executive dashboard built with Python (Dash/Plotly) to analyze Cycli
 
 🔗 **[Live Dashboard → cyclistic-dashboard.onrender.com](https://cyclistic-dashboard.onrender.com)**
 
-Note: Hosted on Render's free tier, the initial load may take a few seconds to spin up.
+<small>*(<span style="color: #ff4d4d; font-weight: bold;">Note:</span> Hosted on Render's free tier, the initial load may take a few seconds to spin up).*</small>
 ---
 
 ## 📊 Project Overview
