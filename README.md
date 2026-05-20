@@ -1,43 +1,125 @@
 # cyclistic-dashboard
 Interactive executive dashboard built with Python (Dash/Plotly) to analyze Cyclistic bike-share data. Features geospatial mapping, trend analysis to compare member vs. casual rider behavior.
-# Cyclistic Executive Data Dashboard 🚲
+# 🚲 Cyclistic Executive Data Dashboard
 
-An interactive web application built with **Python**, **Dash**, and **Plotly** to analyze and visualize bike-share data for the Cyclistic project. This dashboard provides executive-level insights by comparing the behavior patterns of "Member" vs. "Casual" riders.
+> Interactive web application built with Python, Dash and Plotly to analyze bike-share behavior patterns.
+
+[![Python](https://img.shields.io/badge/Python-3.10+-blue?logo=python)](https://python.org)
+[![Dash](https://img.shields.io/badge/Dashboard-Dash%2FPlotly-informational?logo=plotly)](https://dash.plotly.com)
+[![Folium](https://img.shields.io/badge/Map-Folium-green)](https://python-visualization.github.io/folium/)
+[![Deployed on Render](https://img.shields.io/badge/Deployed-Render-purple?logo=render)](https://render.com)
+
+🔗 **[Live Dashboard → cyclistic-dashboard.onrender.com](https://cyclistic-dashboard.onrender.com)**
+
+*(Note: Hosted on Render's free tier, the initial load may take a few seconds to spin up).*
+---
 
 ## 📊 Project Overview
-This project processes over **423,000 cleaned records** to identify key differences in how different user types utilize the bike-share service. The goal is to provide data-driven recommendations for marketing strategies aimed at converting casual riders into annual members.
 
-**⚠️ Technical Note on Data Selection:** > To ensure maximum performance and comply with the 25MB file size limit on the free hosting tier, this dashboard focuses on **2020 data**. This allowed for a higher resolution of trends and more detailed station mapping within the platform's constraints.
+This dashboard is part of the **Google Data Analytics Capstone Project**. It processes over 150,000 cleaned records from the Divvy bike-share system (Chicago) to provide executive-level insights on how **Member** and **Casual** riders use the service differently.
 
-## ✨ Key Features
-* **Real-time Filtering**: Filter data by Year, User Type, Day of the Week, and specific Station names.
-* **Outlier Management**: Automatically filters out trips longer than **120 minutes** to ensure data quality and realistic averages.
-* **Interactive Geospatial Map**: 
-    * *Network View*: Visualizes the entire station distribution.
-    * *Strategic View*: Focuses on the **Top 25** most active stations for resource optimization.
-* **Behavioral Heatmaps**: Identifies peak demand hours to assist in bike redistribution efforts.
-* **Duration Analysis**: Displays average trip lengths (Cleaned Metrics) categorized by user type and weekday.
+The goal is to support a data-driven marketing strategy aimed at converting casual riders into annual members.
 
-## 🛠️ Technical Stack
-* **Language**: Python
-* **Data Manipulation**: Pandas (Feature Engineering & Cleaning)
-* **Dashboard Framework**: Dash (Plotly)
-* **Visualizations**: Plotly Express (Histograms, Bar Charts, Density Heatmaps, Scatter Mapbox)
+---
 
-## 🏗️ Data Engineering (Feature Engineering)
-Before visualization, the following **time-based features** were extracted from the raw timestamps to enable granular analysis:
-* `year`: Extracted from the `started_at` column.
-* `day_of_week`: Calculated using the `.dt.day_name()` method.
-* `hour`: Extracted to identify peak traffic periods.
-* `ride_length`: Calculated as the total duration in minutes (`ended_at` - `started_at`).
+## 🔗 Related Resources
+
+| Resource | Link |
+|----------|------|
+| 📓 Full Analysis — Jupyter Notebook | [View on Kaggle]([your-kaggle-notebook-link]) |
+| 📄 Executive Presentation PDF | [View on Kaggle]([your-kaggle-presentation-link]) |
+
+---
 
 ## 📸 Dashboard Preview
 
 ![Dashboard Screenshot](dashboard_final.png)
 
-## Cyclistic Bike-Share Analysis Dashboard 🚲
+---
 
-**Live Demo:** [View the interactive dashboard here](https://cyclistic-dashboard.onrender.com)
+## ⚠️ Technical Note on Data
+
+The complete dataset (Q1 2019 + Q1 2020) totals ~123 MB — exceeding the 25 MB file size limit on GitHub. The dashboard uses a random sample of 150,000 records drawn from the combined dataset (`all_trips_github.csv`). The sample predominantly reflects 2020 data, which represents the larger share of the full dataset. This does not affect the validity of the behavioral insights.
 
 ---
-*Developed as part of the Google Data Analytics Capstone Project.*
+
+## ✨ Key Features
+
+- **Real-time Filtering** — Filter by User Type, Day of the Week, and Station name
+- **Outlier Management** — Automatically filters trips over 120 minutes to ensure realistic averages
+- **Interactive Geospatial Map (Folium)**
+  - 🔵 Blue circles = Member stations
+  - 🟠 Orange circles = Casual stations
+  - Circle size proportional to ride volume
+  - Hover tooltips showing station names
+  - Two views: Top 25 most active stations / All 635 stations
+- **Behavioral Heatmaps** — Peak demand hours to assist in bike redistribution
+- **Duration Analysis** — Average trip lengths (cleaned <120 min) by user type and weekday
+
+---
+
+## 🛠️ Technical Stack
+
+| Tool | Purpose |
+|------|---------|
+| Python | Core language |
+| Pandas | Data manipulation and feature engineering |
+| Dash | Dashboard framework |
+| Plotly Express | Charts (bar, histogram, heatmap) |
+| Folium | Interactive geospatial map |
+| Gunicorn | Production server (Procfile) |
+| Render | Cloud deployment |
+
+---
+
+## 📁 Repository Structure
+
+```
+cyclistic-dashboard/
+│
+├── app.py                    # Main Dash application
+├── clean_data.py             # Data cleaning and feature engineering
+├── all_trips_github.csv      # Cleaned sample dataset (150K records)
+├── dashboard_final.png       # Dashboard screenshot for README
+├── requirements.txt          # Python dependencies
+├── Procfile                  # Render deployment configuration
+└── README.md
+```
+
+---
+
+## 🏗️ Data Engineering
+
+The following features were extracted from raw timestamps in `clean_data.py`:
+
+| Feature | Method | Purpose |
+|---------|--------|---------|
+| `year` | `.dt.year` | Year filter |
+| `day_of_week` | `.dt.day_name()` | Weekly pattern analysis |
+| `hour` | `.dt.hour` | Peak demand identification |
+| `ride_length` | `ended_at - started_at` (minutes) | Duration analysis |
+
+---
+
+## ⚙️ Run Locally
+
+### 1. Clone the repository
+```bash
+git clone https://github.com/vik-Vicky/cyclistic-dashboard.git
+cd cyclistic-dashboard
+```
+
+### 2. Install dependencies
+```bash
+pip install -r requirements.txt
+```
+
+### 3. Run the app
+```bash
+python app.py
+```
+Open `http://localhost:8050` in your browser.
+
+---
+
+*Developed as part of the Google Data Analytics Capstone Project · Victoria Dov · 2026*
