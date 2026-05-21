@@ -24,8 +24,8 @@ The goal is to support a data-driven marketing strategy aimed at converting casu
 
 | Resource | Link |
 |----------|------|
-| 📓 Full Analysis — Jupyter Notebook | [View on Kaggle]([your-kaggle-notebook-link]) |
-| 📄 Executive Presentation PDF | [View on Kaggle]([your-kaggle-presentation-link]) |
+| 📓 Full Analysis — Jupyter Notebook | [View on Kaggle](https://www.kaggle.com/code/victoriaddd/cyclistic-bike-share-python-dashboard-folium) |
+| 📄 Executive Presentation PDF | [View on Kaggle](https://www.kaggle.com/datasets/victoriaddd/cyclistic-analysis-presentation-python-dash) |
 
 ---
 
